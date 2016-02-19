@@ -27,15 +27,20 @@
       document.body.appendChild(renderer.domElement);
       
       var forma = new THREE.BoxGeometry (1,1,1);
-      var material = new THREE.MeshBasicMaterial({color: 0x00ff00);
+      var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
       var cubo = new THREE.Mesh(forma, material);
       escena.add (cubo);
       
       function render () {
       requestAnimationFrame (render);
+      
+      cubo.rotation.x += 0.1;
+      cubo.rotation.y += 0.1;
+      
       renderer.render(escena, camara);
       }
       render();
+      
       
     
     </script>
